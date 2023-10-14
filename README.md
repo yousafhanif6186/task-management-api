@@ -28,7 +28,11 @@ To get started with this project, follow these steps:
     ```bash
     npm start
 
-### Testing APIs
+### API Docs
+
+Task_Management_APIs.postman_collection.json  can be found under  `task-management-api/docs` folder.
+
+#### Testing APIs
 
 To run all unit tests run below command in project's root directory.
 
