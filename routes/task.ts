@@ -63,8 +63,10 @@ router.put('/task/:id', (req: Request, res: Response) => {
     if (taskIndex === -1) {
         res.status(404).json({ message: 'Task not found' });
     } else {
-        tasks[taskIndex] = req.body;
-        res.json(tasks[taskIndex]);
+        const task = tasks[taskIndex];
+        updateObject(task, req.body)
+        tasks[taskIndex] = task;
+        res.json(task);
     }
 });
 
@@ -94,5 +96,13 @@ router.get('/tasks', (req: Request, res: Response) => {
         res.json(tasks);
     }
 });
+
+function updateObject(target: any, source: any) {
+    for (const key in source) {
+        if (source.hasOwnProperty(key)) {
+            target[key] = source[key];
+        }
+    }
+}
 
 export default router;
