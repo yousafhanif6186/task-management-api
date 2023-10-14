@@ -4,7 +4,7 @@
   "description": "Task management system using NodeJs+TypeScript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npx mocha --require ts-node/register ./tests/task.test.ts",
     "build": "npx tsc",
     "start": "ts-node index.ts",
     "dev": "nodemon index.ts"
